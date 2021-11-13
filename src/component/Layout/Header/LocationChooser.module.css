@@ -1,0 +1,62 @@
+.localStore_Box {
+    width: 120px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.dropdownButton {
+    color: #fff !important;
+    display: flex !important;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 6px !important;
+}
+
+.dropdownButton:focus {
+    box-shadow: none !important;
+}
+
+.dropdownButton:hover {
+    color: #fff;
+}
+
+.boxIcon {
+    display: block;
+    height: 100%;
+}
+
+.boxContent {
+    display: inline-block;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.boxContent p {
+    margin: 0;
+}
+
+.boxContent p:first-child {
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.boxContent p:last-child {
+    font-size: 12px;
+    list-style: 18px;
+}
+
+.dropdownMenu {
+    padding: 0 !important;
+    border-radius: 10px !important;
+}
+
+.dropdownMenu li {
+    padding: 3px 20px;
+}
+
+.dropdownMenu li.active {
+    background-color: #FEE2E2;
+    /* background: red; */
+}

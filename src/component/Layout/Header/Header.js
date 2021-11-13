@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
+import LocationChooser from "./LocationChooser"
 import SearchInput from "./SearchInput"
 
 const Header = () => {
@@ -10,6 +11,7 @@ const Header = () => {
             <Link to="/">
                <img src="#" alt="logo" />
             </Link>
+            <LocationChooser />
             <SearchInput />
          </div>
       </nav>

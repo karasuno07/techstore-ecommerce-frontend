@@ -1,5 +1,30 @@
+.inputGroup {
+    position: relative;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.searchIcon_Block {
+    display: flex;
+    font-size: 16px;
+    background-color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchIcon_Icon {
+    display: block;
+    margin-left: 5px;
+    color: #707070;
+}
+
 .searchBox {
-    color: #444;
-    min-width: 200px;
-    max-width: 274px;
+    width: 250px;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    color: #2f2f2f;
+    font-size: 14px;
+    line-height: 22px;
 }
