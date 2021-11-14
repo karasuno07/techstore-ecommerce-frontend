@@ -1,0 +1,17 @@
+.overlay {
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   z-index: -1;
+
+   &.hiding {
+      background-color: transparent;
+   }
+
+   &.active {
+      background-color: #8e8e8e50;
+      transition: background-color 0.15s ease-in-out;
+   }
+}

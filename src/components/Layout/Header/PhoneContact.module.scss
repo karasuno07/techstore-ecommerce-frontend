@@ -1,0 +1,22 @@
+.phoneContactBox {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.phoneContactBox:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.phoneContactIcon {
+    position: relative;
+    font-size: 24px;
+}
+
+.phoneContactText {
+    margin: 0 0 0 5px;
+    line-height: 16px;
+}

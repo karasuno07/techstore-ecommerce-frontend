@@ -1,7 +1,7 @@
 export function mapClassNames(classes) {
    return Object.entries(classes)
-      .filter(([key, value]) => value)
-      .map(([key, value]) => key)
+      .filter(([className, condition]) => condition)
+      .map(([className, condition]) => className)
       .join(" ")
 }
 

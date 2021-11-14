@@ -1,10 +1,22 @@
-import React from "react"
-import "./App.css"
-import Header from "./component/Layout/Header/Header"
-import Footer from "./component/Layout/Footer/Footer"
+import React, { useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import "./App.css"
+import Header from "./components/Layout/Header/Header"
+import Footer from "./components/Layout/Footer/Footer"
+import Overlays from "./components/UI/Overlays/Overlays"
+import Button from "./components/UI/Button"
 
 function App() {
+   const [enableOverlays, setEnableOverlays] = useState(false)
+
+   const handleToggleOverlays = (state) => {
+      if (state !== undefined) {
+         setEnableOverlays(!!state)
+      } else {
+         setEnableOverlays((prevState) => !prevState)
+      }
+   }
+
    return (
       <BrowserRouter>
          <Routes>
@@ -12,8 +24,14 @@ function App() {
                path="/"
                element={
                   <React.Fragment>
-                     <Header />
+                     <Header onToggleOverlays={handleToggleOverlays} />
+                     <div className="mt-10">
+                        <Button variant="danger" size="lg">
+                           123
+                        </Button>
+                     </div>
                      <Footer />
+                     <Overlays active={enableOverlays} />
                   </React.Fragment>
                }></Route>
          </Routes>

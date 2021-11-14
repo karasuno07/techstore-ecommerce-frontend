@@ -1,7 +1,6 @@
 .inputGroup {
     position: relative;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .searchIcon_Block {
@@ -12,11 +11,12 @@
     border-bottom-left-radius: 10px;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .searchIcon_Icon {
     display: block;
-    margin-left: 5px;
+    margin-left: 8px;
     color: #707070;
 }
 
@@ -27,4 +27,15 @@
     color: #2f2f2f;
     font-size: 14px;
     line-height: 22px;
+    z-index: 10;
+}
+
+.searchBox_Expand {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    background-color: #fff;
+    min-height: 35px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

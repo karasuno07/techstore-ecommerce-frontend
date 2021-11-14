@@ -1,0 +1,22 @@
+.orderInfoBox {
+   color: #fff;
+   display: flex;
+   align-items: center;
+   padding: 5px 10px;
+}
+
+.orderInfoBox:hover {
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: 1rem;
+   cursor: pointer;
+}
+
+.orderInfoIcon {
+   font-size: 28px;
+   transform: scaleX(-1);
+}
+
+.orderInfoText {
+   margin: 0 0 0 5px;
+   line-height: 16px;
+}

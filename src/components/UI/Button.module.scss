@@ -1,0 +1,47 @@
+.button {
+   display: inline-block;
+   padding: 8px 16px;
+   min-width: 80px;
+   text-align: center;
+   text-decoration: none;
+   background-color: transparent;
+   color: #333;
+   outline: none;
+   border: none;
+   border-radius: 2.5px;
+   cursor: pointer;
+
+   &.sm {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+   }
+   &.lg {
+      padding: 12px 36px;
+      font-size: 1.1rem;
+   }
+
+   &:hover {
+      filter: saturate(1.5) opacity(0.9) contrast(1.05);
+   }
+   &:disabled {
+      filter: grayscale(0.75) !important;
+      cursor: default;
+   }
+
+   &.success {
+      background-color: #47d764;
+      color: #f2f2f2;
+   }
+   &.info {
+      background-color: #2f86eb;
+      color: #f2f2f2;
+   }
+   &.warning {
+      background-color: #ffc021;
+      color: #f2f2f2;
+   }
+   &.danger {
+      background-color: #dc3545;
+      color: #f2f2f2;
+   }
+}
