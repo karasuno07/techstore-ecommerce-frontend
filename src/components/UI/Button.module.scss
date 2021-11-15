@@ -1,6 +1,25 @@
-.button {
-   display: inline-block;
+@import "../../library";
+
+@mixin variant($backgroud, $foreground: #f2f2f2) {
+   background-color: $backgroud;
+   color: $foreground;
+}
+
+@mixin size($size: "") {
    padding: 8px 16px;
+   @if $size == "sm" {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+   }
+   @if $size == "lg" {
+      padding: 12px 36px;
+      font-size: 1.1rem;
+   }
+}
+
+.button {
+   @include size();
+   display: inline-block;
    min-width: 80px;
    text-align: center;
    text-decoration: none;
@@ -12,12 +31,10 @@
    cursor: pointer;
 
    &.sm {
-      padding: 6px 12px;
-      font-size: 0.85rem;
+      @include size("sm");
    }
    &.lg {
-      padding: 12px 36px;
-      font-size: 1.1rem;
+      @include size("lg");
    }
 
    &:hover {
@@ -29,19 +46,15 @@
    }
 
    &.success {
-      background-color: #47d764;
-      color: #f2f2f2;
+      @include variant($success);
    }
    &.info {
-      background-color: #2f86eb;
-      color: #f2f2f2;
+      @include variant($info);
    }
    &.warning {
-      background-color: #ffc021;
-      color: #f2f2f2;
+      @include variant($warning);
    }
    &.danger {
-      background-color: #dc3545;
-      color: #f2f2f2;
+      @include variant($danger);
    }
 }

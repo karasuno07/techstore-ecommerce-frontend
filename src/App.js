@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import "./App.css"
 import Header from "./components/Layout/Header/Header"
 import Footer from "./components/Layout/Footer/Footer"
 import Overlays from "./components/UI/Overlays/Overlays"
@@ -26,7 +25,7 @@ function App() {
                   <React.Fragment>
                      <Header onToggleOverlays={handleToggleOverlays} />
                      <div className="mt-10">
-                        <Button variant="danger" size="lg">
+                        <Button href="123" variant="info">
                            123
                         </Button>
                      </div>
