@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { BrowserRouter } from "react-router-dom"
 import App from "./App"
 import "./index.scss"
 import { store } from "./app/store"
@@ -11,7 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 ReactDOM.render(
    <React.StrictMode>
       <Provider store={store}>
-         <App />
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
       </Provider>
    </React.StrictMode>,
    document.getElementById("root")
