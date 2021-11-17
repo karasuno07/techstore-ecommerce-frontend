@@ -5,3 +5,10 @@ $warning: #ffc021;
 $danger: #dc3545;
 
 $header-height: 64px;
+
+@mixin prefix($property, $value, $prefixes) {
+   @each $prefix in $prefixes {
+      -#{$prefix}-#{$property}: $value;
+   }
+   #{$property}: $value;
+}
