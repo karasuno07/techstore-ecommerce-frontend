@@ -1,13 +1,9 @@
 @import "../../library";
 
 @mixin wrapperStyle {
-   border-radius: 10px;
+   border-radius: $border-radius;
    max-width: 180px;
-   @include prefix(
-      box-shadow,
-      (rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px),
-      moz webkit
-   );
+   @include prefix(box-shadow, $box-shadow, moz webkit);
 }
 
 @mixin fontStyle {
@@ -24,7 +20,7 @@
       &:hover {
          background: #ddd;
          color: inherit;
-         border-radius: 10px;
+         border-radius: $border-radius;
       }
    }
 }
@@ -74,7 +70,10 @@
 
             .navIcon {
                font-size: 0.875em;
-               margin-left: auto;
+               margin: {
+                  left: auto;
+                  right: 5px;
+               }
             }
          }
       }
