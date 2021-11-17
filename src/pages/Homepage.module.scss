@@ -1,9 +1,10 @@
 @import "../library";
 
 .wrapper {
-   max-width: 1080px;
+   max-width: $content-width;
    min-height: 600px;
    margin: auto;
-   background-color: red;
+   // background-color: red;
    margin-top: $header-height;
+   padding: 15px 0;
 }

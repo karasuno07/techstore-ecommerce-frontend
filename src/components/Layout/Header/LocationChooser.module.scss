@@ -1,71 +1,71 @@
 .box {
-    width: 120px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 1rem;
-    cursor: pointer;
+   width: 120px;
+   height: 40px;
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: 1rem;
+   cursor: pointer;
 }
 
 .dropdownButton {
-    color: #fff !important;
-    display: flex !important;
-    align-items: center;
-    gap: 3px;
-    padding: 4px 6px !important;
-    width: 100%;
-}
+   color: #fff !important;
+   display: flex !important;
+   align-items: center;
+   gap: 3px;
+   padding: 4px 6px !important;
+   width: 100%;
 
-.dropdownButton:focus {
-    box-shadow: none !important;
-}
-
-.dropdownButton:hover {
-    color: #fff;
+   &:focus {
+      box-shadow: none !important;
+   }
+   &:hover {
+      color: #fff;
+   }
 }
 
 .boxIcon {
-    display: block;
-    height: 100%;
+   display: block;
+   height: 100%;
 }
 
 .boxContent {
-    display: inline-block;
-    margin-left: 2px;
-    text-align: left;
-}
+   display: inline-block;
+   margin-left: 2px;
+   text-align: left;
 
-.boxContent p {
-    margin: 0;
-}
+   p {
+      margin: 0;
 
-.boxContent p:first-child {
-    font-size: 10px;
-    line-height: 15px;
-}
-
-.boxContent p:last-child {
-    font-size: 12px;
-    list-style: 18px;
+      &:first-child {
+         font-size: 10px;
+         line-height: 15px;
+      }
+      &:last-child {
+         font-size: 12px;
+         list-style: 18px;
+      }
+   }
 }
 
 .dropdownMenu {
-    padding: 0 !important;
-    border-radius: 10px !important;
-    min-width: 0 !important;
-    overflow: hidden;
-}
+   padding: 0 !important;
+   border-radius: 10px !important;
+   min-width: 0 !important;
+   overflow: hidden;
 
-.dropdownMenu li {
-    padding: 3px 20px;
-    color: #333;
-    font-size: 14px;
-    line-height: 20px;
-}
+   li {
+      padding: 3px 20px;
+      color: #333;
+      font-size: 14px;
+      line-height: 20px;
 
-.dropdownMenu li.active {
-    background-color: #FEE2E2;
-}
-
-.dropdownMenu li:not(.active):hover {
-    background-color: #D3D3D350;
+      &.active {
+         background-color: #fee2e2;
+      }
+      &:not(.active):hover {
+         background-color: #d3d3d350;
+      }
+      &:active {
+         color: #333;
+      }
+   }
 }

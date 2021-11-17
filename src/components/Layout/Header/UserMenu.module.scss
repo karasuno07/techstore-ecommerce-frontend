@@ -1,23 +1,28 @@
 .userBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 62px;
-    height: 42px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 1rem;
-    cursor: pointer;
-    color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 62px;
+   height: 42px;
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: 1rem;
+   cursor: pointer;
+   color: #fff;
+   text-decoration: none !important;
+
+   &:hover {
+      color: #fff;
+   }
 }
 
 .userBoxIcon {
-    font-size: 18px;
-    margin-bottom: 3px;
+   font-size: 18px;
+   margin-bottom: 3px;
 }
 
 .userBoxText {
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.1em;
+   margin: 0;
+   font-size: 12px;
+   line-height: 1.1em;
 }
