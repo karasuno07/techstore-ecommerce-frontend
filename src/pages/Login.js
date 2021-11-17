@@ -1,8 +1,10 @@
 import React from "react"
-import styles from "./Login.module.scss"
+import styles from "./Homepage.module.scss"
 
-const Login = () => {
-   return <div className={styles.wrapper}></div>
+const Homepage = () => {
+   return <div className={styles.wrapper}>
+       <h1>Hai ne</h1>
+   </div>
 }
 
-export default Login
+export default Homepage
