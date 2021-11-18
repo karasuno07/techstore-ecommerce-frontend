@@ -1,3 +1,13 @@
+@import "../library";
+.wrapper {
+    max-width: $content-width;
+    min-height: 600px;
+    margin: auto;
+    background-color: red;
+    margin-top: $header-height;
+    padding: 15px 0;
+}
+
 .card {
     padding: 16px;
     width: 500px;
@@ -14,4 +24,24 @@
     }
     ;
     border: 1px solid;
+}
+
+.btnControl {
+    width: 100%;
+}
+
+.orLogin {
+    display: flex;
+}
+
+.orLogin>div {
+    height: 1px;
+    width: 100%;
+    background-color: #dbdbdb;
+    margin-top: 9px;
+}
+
+.orLogin>span {
+    color: #cccccc;
+    padding: 0px 16px;
 }
