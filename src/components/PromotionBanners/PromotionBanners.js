@@ -5,8 +5,8 @@ const PromotionBanners = ({ items }) => {
    return (
       <div className={styles.wrapper}>
          {!!items &&
-            items.map((item) => (
-               <div class={styles.banner}>
+            items.map((item, index) => (
+               <div key={index} className={styles.banner}>
                   <img src={item.image} alt="#" width="100%" height="100%" />
                </div>
             ))}
