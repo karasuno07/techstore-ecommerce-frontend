@@ -1,0 +1,14 @@
+@import "../../../library";
+
+.jumpButton {
+   position: fixed;
+   bottom: 50px;
+   right: 50px;
+   border-radius: 50%;
+   background-color: $primary;
+   min-width: 0;
+   padding: 15px;
+   font-size: 14px;
+   line-height: 10.5px;
+   color: #fff;
+}

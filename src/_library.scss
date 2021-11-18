@@ -9,9 +9,21 @@ $box-shadow: (rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6
 $header-height: 64px;
 $content-width: 1200px;
 
-@mixin prefix($property, $value, $prefixes) {
+@mixin prefix-property($property, $value, $prefixes) {
    @each $prefix in $prefixes {
       -#{$prefix}-#{$property}: $value;
    }
    #{$property}: $value;
+}
+
+@mixin keyframes-animation($name) {
+   @-webkit-keyframes #{$name} {
+      @content;
+   }
+   @-moz-keyframes #{$name} {
+      @content;
+   }
+   @keyframes #{$name} {
+      @content;
+   }
 }
