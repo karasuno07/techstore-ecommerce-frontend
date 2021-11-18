@@ -29,7 +29,6 @@ const Carousel = ({ items }) => {
       beforeChange: (current, next) => {
          setActiveIndex(next)
       },
-      // afterChange: (current) => console.log(current),
       appendDots: (dots) => (
          <div className={styles.tabBar}>
             {dots.map((item, index) => (

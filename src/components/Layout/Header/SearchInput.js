@@ -1,13 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "./SearchInput.module.scss"
 import Input from "../../UI/Input"
 import { BsSearch } from "react-icons/bs"
 
 const SearchInput = ({ onToggleOverlays }) => {
    const [isSearching, setIsSearching] = useState(false)
+   const [searchValue, setSearchValue] = useState("")
 
    const handleTypingSearchBox = (event) => {
       const text = event.target.value
+      setSearchValue(text)
 
       if (text.length > 0) {
          setIsSearching(true)
@@ -17,6 +19,15 @@ const SearchInput = ({ onToggleOverlays }) => {
          onToggleOverlays(false)
       }
    }
+
+   useEffect(() => {
+      const timerId = setTimeout(() => {
+         // Gọi API
+         console.log(searchValue)
+      }, 2000)
+
+      return () => clearTimeout(timerId)
+   }, [searchValue])
 
    return (
       <div className={styles.inputGroup}>

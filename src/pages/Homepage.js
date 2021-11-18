@@ -121,6 +121,7 @@ const banners = [
 ]
 
 const Homepage = () => {
+   console.log("homepage")
    return (
       <Section className={styles.wrapper}>
          <CategoryBar items={categories} />

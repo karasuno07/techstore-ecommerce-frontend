@@ -7,6 +7,7 @@ import styles from "./Layout.module.scss"
 const Layout = ({ children }) => {
    const [enableOverlays, setEnableOverlays] = useState(false)
    const [enableJumpToTop, setEnableJumpToTop] = useState(false)
+   console.log("layout")
 
    useEffect(() => {
       const handleScrollToTop = () => setEnableJumpToTop(window.scrollY >= 300)

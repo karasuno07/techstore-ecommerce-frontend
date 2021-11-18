@@ -1,15 +1,15 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import styles from "./ControlItem.module.scss"
 import clsx from "clsx"
 
 const ControlItem = ({ children, active }) => {
    const nodeRef = useRef()
 
-   if (active && nodeRef.current) {
-      nodeRef.current.scrollIntoView({
-         behavior: "smooth",
-      })
-   }
+   useEffect(() => {
+      if (active && nodeRef.current) {
+         nodeRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" })
+      }
+   }, [active])
 
    return (
       <div ref={nodeRef} className={clsx(styles.slickItem, { [styles.active]: active })}>
