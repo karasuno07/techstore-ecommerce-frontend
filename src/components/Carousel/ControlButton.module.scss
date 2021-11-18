@@ -1,0 +1,51 @@
+@import "../../library";
+
+$circle-size: 30px;
+
+.controlButton {
+   position: absolute;
+   top: 120px;
+   padding: 15px;
+   min-width: 0;
+   width: $circle-size;
+   height: $circle-size * 2;
+   background-color: #44444435;
+   color: #f2f2f2;
+   transition: transform 0.25s linear;
+
+   &:hover {
+      background-color: #33333365;
+   }
+}
+
+.prevButton {
+   left: 0;
+   border-top-right-radius: $circle-size * 2;
+   border-bottom-right-radius: $circle-size * 2;
+   transform: translateX(-100%);
+
+   &.show {
+      transform: translateX(0);
+      transition: transform 0.25s linear;
+   }
+
+   svg {
+      margin-left: -15px;
+   }
+}
+
+.nextButton {
+   right: 0;
+   border-top-left-radius: $circle-size * 2;
+   border-bottom-left-radius: $circle-size * 2;
+   transform: translateX(100%);
+
+   &.show {
+      transform: translateX(0);
+      transition: transform 0.25s linear;
+   }
+
+   svg {
+      padding-right: 5px;
+   }
+}

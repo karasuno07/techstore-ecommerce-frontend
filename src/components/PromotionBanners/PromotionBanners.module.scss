@@ -1,0 +1,16 @@
+@import "../../library";
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   height: inherit;
+   width: 265px;
+   justify-content: space-between;
+
+   .banner {
+      height: 120px;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+   }
+}

@@ -2,15 +2,15 @@
 
 @mixin wrapperStyle {
    border-radius: $border-radius;
-   max-width: 180px;
-   @include prefix(box-shadow, $box-shadow, moz webkit);
+   width: 200px;
+   @include prefix-property(box-shadow, $box-shadow, moz webkit);
 }
 
 @mixin fontStyle {
    color: #343a40;
    font-size: 12px;
    font-weight: 700;
-   line-height: 28px;
+   line-height: 32px;
 
    a {
       text-decoration: none;
@@ -26,6 +26,7 @@
 }
 
 .barWrapper {
+   height: inherit;
    @include wrapperStyle();
 
    ul {

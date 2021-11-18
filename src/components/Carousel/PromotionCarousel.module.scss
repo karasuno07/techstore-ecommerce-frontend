@@ -2,4 +2,16 @@
 
 .wrapper {
    border-radius: $border-radius;
+   width: 700px;
+   height: inherit;
+   overflow: hidden;
+   @include prefix-property(box-shadow, $box-shadow, moz webkit);
+}
+
+.slickDots {
+   position: relative;
+   margin-top: 1px;
+   gap: 1px;
+   height: 80px;
+   overflow: hidden;
 }

@@ -22,7 +22,7 @@ const CategoryBar = ({ items }) => {
 
                         <Dropdown.Menu className={styles.menuWrapper}>
                            {item.brands.map((brand) => (
-                              <Dropdown.Item as={DropdownLink} href={brand.slug}>
+                              <Dropdown.Item key={brand.id} as={DropdownLink} href={brand.slug}>
                                  {brand.name}
                               </Dropdown.Item>
                            ))}
@@ -38,12 +38,16 @@ const CategoryBar = ({ items }) => {
                </li>
             ))}
             <li>
-               <BiCategory className={styles.itemIcon} />
-               <Link to="sforum">Tin công nghệ</Link>
+               <div className={styles.categoryItem}>
+                  <BiCategory className={styles.itemIcon} />
+                  <Link to="sforum">Tin công nghệ</Link>
+               </div>
             </li>
             <li>
-               <BiCategory className={styles.itemIcon} />
-               <Link to="sforum">Khuyến mại</Link>
+               <div className={styles.categoryItem}>
+                  <BiCategory className={styles.itemIcon} />
+                  <Link to="sforum">Khuyến mại</Link>
+               </div>
             </li>
          </ul>
       </Card>
