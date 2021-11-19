@@ -4,6 +4,7 @@ import Layout from "./components/Layout/Layout"
 
 const Homepage = React.lazy(() => import("./pages/Homepage"))
 const Login = React.lazy(() => import("./pages/Login"))
+const Register = React.lazy(() => import("./pages/Register"))
 
 function App() {
    return (
@@ -12,6 +13,7 @@ function App() {
             <Routes>
                <Route path="/" exact element={<Homepage />} />
                <Route path="/login" element={<Login />} />
+               <Route path="/register" element={<Register />} />
             </Routes>
          </Suspense>
       </Layout>
