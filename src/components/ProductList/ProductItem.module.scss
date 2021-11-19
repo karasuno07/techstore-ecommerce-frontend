@@ -1,0 +1,50 @@
+@import "../../library";
+
+.wrapper {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   border-radius: $border-radius;
+   box-shadow: $box-shadow;
+   height: 400px;
+   padding: 10px;
+
+   &:hover {
+      transform: scale(1.025);
+   }
+
+   .discountSticker {
+      position: absolute;
+      top: 0;
+      left: -4px;
+      width: 80px;
+      height: 31px;
+      background: url("/images/discount-badge.svg") center center no-repeat;
+
+      p {
+         text-align: center;
+         margin: 2px 0 0;
+         font-size: 12px;
+         line-height: 22px;
+         font-weight: 700;
+         color: #fff;
+      }
+   }
+
+   .hotsaleSticker {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      width: 50px;
+      height: 50px;
+      background: url("/images/hotsale-sticker.svg") center center no-repeat;
+   }
+
+   .imageBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+   }
+}

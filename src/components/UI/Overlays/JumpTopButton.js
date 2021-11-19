@@ -7,7 +7,7 @@ const JumpTopButton = () => {
    const handleJumpToTop = () => window.scroll(0, 0)
 
    return (
-      <Button type="button" className={styles.jumpButton} onClick={handleJumpToTop}>
+      <Button type="button" hover={true} className={styles.jumpButton} onClick={handleJumpToTop}>
          <FaChevronUp />
       </Button>
    )

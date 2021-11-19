@@ -2,7 +2,7 @@
 
 @mixin wrapperStyle {
    border-radius: $border-radius;
-   width: 200px;
+   width: 185px;
    @include prefix-property(box-shadow, $box-shadow, moz webkit);
 }
 

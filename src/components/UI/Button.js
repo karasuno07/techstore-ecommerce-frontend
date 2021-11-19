@@ -1,11 +1,12 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import styles from "./Button.module.scss"
 import clsx from "clsx"
 
-const Button = ({ children, className, href, variant, size, ...others }) => {
-   const Component = !!href ? "a" : "button"
+const Button = ({ children, className, href, variant, size, hover, ...others }) => {
+   const Component = !!href ? Link : "button"
 
-   const props = { href, ...others }
+   const props = { to: href, ...others }
 
    return (
       <Component
@@ -13,6 +14,7 @@ const Button = ({ children, className, href, variant, size, ...others }) => {
             [className]: !!className,
             [styles[variant]]: !!variant,
             [styles[size]]: !!size,
+            [styles[hover]]: !!hover,
          })}
          {...props}>
          {children}

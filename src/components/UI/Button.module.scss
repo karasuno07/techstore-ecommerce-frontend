@@ -38,6 +38,9 @@
    }
 
    &:hover {
+      color: inherit;
+   }
+   &.hover:hover {
       filter: saturate(1.5) opacity(0.9) contrast(1.05);
    }
    &:disabled {

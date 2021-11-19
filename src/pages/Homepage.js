@@ -4,6 +4,7 @@ import CategoryBar from "components/CategoryBar/CategoryBar"
 import Section from "components/UI/Section"
 import styles from "./Homepage.module.scss"
 import PromotionBanners from "components/PromotionBanners/PromotionBanners"
+import ProductList from "components/ProductList/ProductList"
 
 const categories = [
    {
@@ -123,11 +124,16 @@ const banners = [
 const Homepage = () => {
    console.log("homepage")
    return (
-      <Section className={styles.wrapper}>
-         <CategoryBar items={categories} />
-         <PromotionCarousel items={promotions} />
-         <PromotionBanners items={banners} />
-      </Section>
+      <React.Fragment>
+         <Section className={styles.bannerWrapper}>
+            <CategoryBar items={categories} />
+            <PromotionCarousel items={promotions} />
+            <PromotionBanners items={banners} />
+         </Section>
+         <Section>
+            <ProductList title={categories[0]} filter={categories[0].brands} list={{}} />
+         </Section>
+      </React.Fragment>
    )
 }
 

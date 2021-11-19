@@ -30,7 +30,7 @@ const Carousel = ({ items }) => {
          setActiveIndex(next)
       },
       appendDots: (dots) => (
-         <div className={styles.tabBar}>
+         <div>
             {dots.map((item, index) => (
                <ControlItem key={index} active={index === activeIndex}>
                   {item.props.children}
@@ -51,13 +51,19 @@ const Carousel = ({ items }) => {
          onMouseEnter={toggleShowControl.bind(null, true)}
          onMouseLeave={toggleShowControl.bind(null, false)}>
          {!!items && (
-            <Slider ref={sliderRef} {...settings}>
-               {items.map((item, index) => (
-                  <Slide key={item.id} imageSrc={item.image} />
-               ))}
-            </Slider>
+            <React.Fragment>
+               <Slider ref={sliderRef} {...settings}>
+                  {items.map((item, index) => (
+                     <Slide key={item.id} imageSrc={item.image} />
+                  ))}
+               </Slider>
+               <ControlButton
+                  show={showControl}
+                  onPrev={handlePrevSlide}
+                  onNext={handleNextSlide}
+               />
+            </React.Fragment>
          )}
-         <ControlButton show={showControl} onPrev={handlePrevSlide} onNext={handleNextSlide} />
       </Card>
    )
 }

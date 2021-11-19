@@ -1,4 +1,12 @@
 .section {
+   max-width: inherit;
    display: flex;
+   justify-content: center;
+   padding: 15px;
+   margin: {
+      top: 10px;
+      bottom: 10px;
+   }
    gap: 10px;
+   width: 1200px;
 }
