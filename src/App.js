@@ -2,7 +2,7 @@ import React, { Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
 import Layout from "./components/Layout/Layout"
 
-const Homepage = React.lazy(() => import("./pages/Homepage"))
+const Home = React.lazy(() => import("./pages/Home"))
 const Login = React.lazy(() => import("./pages/Login"))
 const Register = React.lazy(() => import("./pages/Register"))
 
@@ -11,7 +11,7 @@ function App() {
       <Layout>
          <Suspense fallback={<div className="centered"></div>}>
             <Routes>
-               <Route path="/" exact element={<Homepage />} />
+               <Route path="/" exact element={<Home />} />
                <Route path="/login" element={<Login />} />
                <Route path="/register" element={<Register />} />
             </Routes>

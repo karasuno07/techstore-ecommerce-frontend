@@ -8,8 +8,11 @@ const ProductFilter = ({ title, filter }) => {
          <h2>{title.name}</h2>
          <div className={styles.filters}>
             {filter &&
-               filter.map((item) => (
-                  <Button className={styles.filter} href={`/${title.slug}/${item.slug}`}>
+               filter.map((item, index) => (
+                  <Button
+                     key={index}
+                     className={styles.filter}
+                     href={`/${title.slug}/${item.slug}`}>
                      {item.name}
                   </Button>
                ))}

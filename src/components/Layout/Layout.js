@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react"
+import Overlays from "../UI/Overlays/Overlays"
 import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
-import Overlays from "../UI/Overlays/Overlays"
 import styles from "./Layout.module.scss"
 
 const Layout = ({ children }) => {
    const [enableOverlays, setEnableOverlays] = useState(false)
    const [enableJumpToTop, setEnableJumpToTop] = useState(false)
-   console.log("layout")
 
    useEffect(() => {
-      const handleScrollToTop = () => setEnableJumpToTop(window.scrollY >= 300)
+      const handleScrollToTop = () => setEnableJumpToTop(window.scrollY >= 450)
 
       window.addEventListener("scroll", handleScrollToTop)
 

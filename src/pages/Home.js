@@ -1,8 +1,8 @@
 import React from "react"
-import PromotionCarousel from "components/Carousel/PromotionCarousel"
+import PromotionCarousel from "components/PromotionCarousel/PromotionCarousel"
 import CategoryBar from "components/CategoryBar/CategoryBar"
 import Section from "components/UI/Section"
-import styles from "./Homepage.module.scss"
+import styles from "./Home.module.scss"
 import PromotionBanners from "components/PromotionBanners/PromotionBanners"
 import ProductList from "components/ProductList/ProductList"
 
@@ -122,7 +122,6 @@ const banners = [
 ]
 
 const Homepage = () => {
-   console.log("homepage")
    return (
       <React.Fragment>
          <Section className={styles.bannerWrapper}>

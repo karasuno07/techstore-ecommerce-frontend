@@ -8,9 +8,11 @@
    box-shadow: $box-shadow;
    height: 400px;
    padding: 10px;
+   transition: transform 0.35s linear;
 
    &:hover {
       transform: scale(1.025);
+      transition: transform 0.35s linear;
    }
 
    .discountSticker {
@@ -40,11 +42,39 @@
       background: url("/images/hotsale-sticker.svg") center center no-repeat;
    }
 
-   .imageBox {
+   .productImageBox {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 1rem;
+   }
+
+   .productNameBox {
+      line-height: 22px;
+   }
+
+   .productPriceBox {
+      line-height: 19.6px;
+      display: flex;
+
+      p {
+         color: $primary;
+      }
+
+      span {
+         font-size: 12px;
+         line-height: 16.8px;
+         color: #707070;
+         text-decoration: line-through;
+         margin-left: 5px;
+      }
+   }
+
+   p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #444;
    }
 }

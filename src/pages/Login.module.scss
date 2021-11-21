@@ -1,57 +1,170 @@
 @import "../_library.scss";
-.wrapper {
-    max-width: $content-width;
-    min-height: 600px;
-    margin: auto;
-    margin-top: $header-height;
-    padding: 15px 0;
-}
 
-a {
-    text-decoration: none;
+.wrapper {
+   max-width: $content-width;
+   margin: auto {
+      top: $header-height;
+   }
 }
 
 .card {
-    padding: 35px;
-    width: 450px;
-    margin: auto;
-    border: 1px solid #ccc;
-}
+   @include absolute-center(0px, 25px);
+   background-color: #fafafa;
+   padding: 35px;
+   max-width: 450px;
+   min-width: 400px;
+   margin: auto;
+   box-shadow: $box-shadow;
 
-.title {
-    font-size: 20px;
-    line-height: 24px;
-    text-transform: capitalize;
-}
+   .title {
+      font-size: 20px;
+      font-weight: 550;
+      line-height: 24px;
+      text-transform: capitalize;
+   }
 
-.orLogin {
-    display: flex;
-}
+   .divider {
+      display: flex;
 
-.orLogin>div {
-    height: 1px;
-    width: 100%;
-    background-color: #dbdbdb;
-    margin-top: 9px;
-}
+      span {
+         color: #cccccc;
+         padding: 0px 12px;
+         font-size: 12px;
+         text-transform: uppercase;
+      }
 
-.orLogin>span {
-    color: #cccccc;
-    padding: 0px 16px;
-    font-size: 12px;
-    text-transform: uppercase;
-}
+      &::before,
+      &::after {
+         content: "";
+         height: 1px;
+         width: 100%;
+         background-color: #dbdbdb;
+         margin-top: 9px;
+      }
+   }
 
-.btnAuth {
-    display: flex;
-    justify-content: space-around;
-}
+   .form {
+      .formLabelGroup {
+         display: flex;
+         flex-flow: column-reverse;
 
-.textRegister {
-    font-size: 12px;
-    line-height: 14.4px;
-    margin: 0px 5px 0px 0px;
-    padding: 0px 25px;
-    text-align: center;
-    color: rgb(168, 168, 168);
+         + .formLabelGroup {
+            margin-top: 10px;
+         }
+
+         input,
+         label {
+            transition: all 0.25s linear;
+            touch-action: manipulation;
+         }
+
+         input {
+            font-size: 15px;
+            width: 100%;
+            padding: 18px 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+
+            &::-webkit-input-placeholder {
+               opacity: 0;
+               transition: inherit;
+            }
+
+            &:focus {
+               border-left: 8px solid red;
+
+               &::-webkit-input-placeholder {
+                  opacity: 1;
+               }
+            }
+
+            &:placeholder-shown + label {
+               cursor: text;
+               max-width: 66.66%;
+               white-space: nowrap;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               transform-origin: left bottom;
+               transform: translate(0, 2rem);
+               margin-left: 10px;
+            }
+
+            &:not(:placeholder-shown) + label,
+            &:focus + label {
+               transform: translate(0, 0);
+               margin-left: 0;
+               font-weight: bold;
+            }
+         }
+
+         & > label {
+            font-size: 14px;
+            color: #666;
+            padding-bottom: 3px;
+         }
+      }
+
+      .btnSignIn {
+         font-weight: 700;
+         width: 100%;
+         height: 40px;
+         margin-top: 40px;
+      }
+
+      .forgotPassword {
+         font-size: 14px;
+         text-align: right;
+         margin-top: 10px;
+         a {
+            text-decoration: none;
+         }
+      }
+   }
+
+   .btnBlock {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+
+      .btnOAuth {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+         color: #fff;
+
+         span {
+            font-size: 18px;
+            margin-left: 5px;
+         }
+
+         &:hover {
+            filter: saturate(1.5) opacity(0.9) contrast(1.05);
+         }
+
+         svg {
+            display: inline-block;
+            font-size: 22px;
+            line-height: 22px;
+         }
+      }
+
+      .btnFacebook {
+         background-color: #465993;
+      }
+
+      .btnGoogle {
+         background-color: $danger;
+      }
+   }
+
+   .textRegister {
+      font-size: 12px;
+      line-height: 14.4px;
+      margin: 0px 5px 0px 0px;
+      padding: 0px 25px;
+      text-align: center;
+      color: rgb(168, 168, 168);
+   }
 }

@@ -3,6 +3,10 @@ body {
    color: #444 !important;
 }
 
+a {
+   text-decoration: none !important;
+}
+
 .dropdown-toggle::after {
    display: none !important;
 }
