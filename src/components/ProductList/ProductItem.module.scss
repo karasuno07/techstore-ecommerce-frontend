@@ -6,13 +6,20 @@
    flex-direction: column;
    border-radius: $border-radius;
    box-shadow: $box-shadow;
-   height: 400px;
+   height: 365px;
    padding: 10px;
    transition: transform 0.35s linear;
 
    &:hover {
       transform: scale(1.025);
       transition: transform 0.35s linear;
+   }
+
+   p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #444;
    }
 
    .discountSticker {
@@ -51,30 +58,73 @@
    }
 
    .productNameBox {
-      line-height: 22px;
+      p {
+         line-height: 22px;
+         text-overflow: ellipsis;
+         overflow: hidden;
+         white-space: nowrap;
+      }
    }
 
    .productPriceBox {
-      line-height: 19.6px;
       display: flex;
+      line-height: 19.6px;
 
       p {
          color: $primary;
       }
 
       span {
-         font-size: 12px;
+         font-size: 11px;
          line-height: 16.8px;
          color: #707070;
          text-decoration: line-through;
          margin-left: 5px;
+         vertical-align: top;
       }
    }
 
-   p {
-      margin-bottom: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #444;
+   .productRatingBox {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+
+      svg {
+         color: #ddd;
+         &.check {
+            color: #f59e0b;
+         }
+      }
+
+      span {
+         display: inline-block;
+         margin-left: 5px;
+      }
+   }
+
+   .btnBlock {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+
+      a,
+      button {
+         width: 100%;
+         background-color: rebeccapurple;
+         border-radius: 15px;
+         color: #fff;
+
+         &:hover {
+            filter: brightness(1.1);
+         }
+      }
+
+      .btnDetail {
+         background-color: $blue;
+      }
+
+      .btnPurchase {
+         background-color: $orange;
+      }
    }
 }

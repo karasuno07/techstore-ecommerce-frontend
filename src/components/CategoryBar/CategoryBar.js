@@ -1,10 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { Card, Dropdown } from "react-bootstrap"
+import { ButtonGroup, Card, Dropdown } from "react-bootstrap"
 import { FaChevronRight } from "react-icons/fa"
 import { BiCategory } from "react-icons/bi"
 import styles from "./CategoryBar.module.scss"
-import DropdownLink from "components/UI/DropdownLink"
 
 const CategoryBar = ({ items }) => {
    return (
@@ -13,16 +12,22 @@ const CategoryBar = ({ items }) => {
             {items.map((item, index) => (
                <li key={index}>
                   {!!item.brands && (
-                     <Dropdown drop="end">
-                        <Dropdown.Toggle variant="none" className={styles.categoryItem}>
+                     <Dropdown as={ButtonGroup} className={styles.dropdown} drop="end">
+                        <Link to={item.slug} className={styles.categoryItem}>
                            <BiCategory className={styles.itemIcon} />
                            <div>{item.name}</div>
+                        </Link>
+                        <Dropdown.Toggle as="div" className={styles.dropdownToggle} split>
                            <FaChevronRight className={styles.navIcon} />
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu className={styles.menuWrapper}>
+                        <Dropdown.Menu className={styles.dropdownMenu} renderOnMount={true}>
                            {item.brands.map((brand) => (
-                              <Dropdown.Item key={brand.id} as={DropdownLink} href={brand.slug}>
+                              <Dropdown.Item
+                                 key={brand.id}
+                                 as={Link}
+                                 to={brand.slug}
+                                 className={styles.dropdownItem}>
                                  {brand.name}
                               </Dropdown.Item>
                            ))}
@@ -30,10 +35,10 @@ const CategoryBar = ({ items }) => {
                      </Dropdown>
                   )}
                   {!!item.brands === false && (
-                     <div className={styles.categoryItem}>
+                     <Link to={item.slug} className={styles.categoryItem}>
                         <BiCategory className={styles.itemIcon} />
                         <div>{item.name}</div>
-                     </div>
+                     </Link>
                   )}
                </li>
             ))}
@@ -46,7 +51,7 @@ const CategoryBar = ({ items }) => {
             <li>
                <div className={styles.categoryItem}>
                   <BiCategory className={styles.itemIcon} />
-                  <Link to="sforum">Khuyến mại</Link>
+                  <Link to="promotion">Khuyến mại</Link>
                </div>
             </li>
          </ul>

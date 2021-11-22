@@ -1,5 +1,5 @@
 import React from "react"
-import PromotionCarousel from "components/PromotionCarousel/PromotionCarousel"
+import PromotionCarousel from "components/Carousel/PromotionCarousel/PromotionCarousel"
 import CategoryBar from "components/CategoryBar/CategoryBar"
 import Section from "components/UI/Section"
 import styles from "./Home.module.scss"
@@ -121,6 +121,63 @@ const banners = [
    },
 ]
 
+const smartphoneList = [
+   {
+      id: 1,
+      name: "Samsung Galaxy Note 10",
+      price: 24590000,
+      discount: 2990000,
+      rating: {
+         number: 5,
+         count: 87,
+      },
+      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+   },
+   {
+      id: 2,
+      name: "Iphone 13 Pro Max",
+      price: 34900000,
+      discount: 1000000,
+      rating: {
+         number: 3.3,
+         count: 12,
+      },
+      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+   },
+   {
+      id: 3,
+      name: "Iphone 13 Pro Max",
+      price: 34900000,
+      discount: 1000000,
+      rating: {
+         number: 5,
+         count: 1,
+      },
+      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+   },
+   {
+      id: 4,
+      name: "Iphone 13 Pro Max",
+      price: 34900000,
+      discount: 1000000,
+      rating: {
+         number: 3.3,
+         count: 79,
+      },
+      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+   },
+   {
+      id: 5,
+      name: "Iphone 13 Pro Max",
+      price: 34900000,
+      rating: {
+         number: 5,
+         count: 87,
+      },
+      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+   },
+]
+
 const Homepage = () => {
    return (
       <React.Fragment>
@@ -130,7 +187,11 @@ const Homepage = () => {
             <PromotionBanners items={banners} />
          </Section>
          <Section>
-            <ProductList title={categories[0]} filter={categories[0].brands} list={{}} />
+            <ProductList
+               title={categories[0]}
+               filter={categories[0].brands}
+               list={smartphoneList}
+            />
          </Section>
       </React.Fragment>
    )

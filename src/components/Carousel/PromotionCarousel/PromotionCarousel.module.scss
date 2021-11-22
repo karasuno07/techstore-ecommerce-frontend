@@ -1,4 +1,4 @@
-@import "../../library";
+@import "../../../library";
 
 .wrapper {
    border-radius: $border-radius;
@@ -6,13 +6,4 @@
    height: inherit;
    overflow: hidden;
    @include prefix-property(box-shadow, $box-shadow, moz webkit);
-}
-
-.slickDots {
-   display: flex;
-   position: relative;
-   margin-top: 1px;
-   gap: 1px;
-   height: 80px;
-   overflow: hidden;
 }
