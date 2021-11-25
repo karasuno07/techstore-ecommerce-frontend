@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import { ButtonGroup, Card, Dropdown } from "react-bootstrap"
 import { FaChevronRight } from "react-icons/fa"
@@ -26,7 +26,7 @@ const CategoryBar = ({ items }) => {
                               <Dropdown.Item
                                  key={brand.id}
                                  as={Link}
-                                 to={brand.slug}
+                                 to={`/${item.slug}/${brand.slug}`}
                                  className={styles.dropdownItem}>
                                  {brand.name}
                               </Dropdown.Item>

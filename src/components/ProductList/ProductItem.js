@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
+import Button from "components/UI/Button"
 import { FaStar } from "react-icons/fa"
-import { NumberFormatter } from "common/StringUtils"
+import { NumberFormatter } from "common/utils/StringUtils"
+
 import clsx from "clsx"
 import styles from "./ProductItem.module.scss"
-import Button from "components/UI/Button"
 
 const ProductItem = ({ item }) => {
    const formatter = NumberFormatter("vi", "VND")
@@ -20,7 +21,7 @@ const ProductItem = ({ item }) => {
          )}
          <div className={styles.hotsaleSticker} />
          <div className={styles.productImageBox}>
-            <Link to={"xyz"}>
+            <Link to={`/xyz`}>
                <img src={item.image} alt={item.name} width="100%" />
             </Link>
          </div>
@@ -43,7 +44,7 @@ const ProductItem = ({ item }) => {
             <span>{item.rating.count ? item.rating.count : 0} đánh giá</span>
          </div>
          <div className={styles.btnBlock}>
-            <Button size="sm" className={styles.btnDetail}>
+            <Button href={`/xyz`} size="sm" className={styles.btnDetail}>
                Xem chi tiết
             </Button>
             <Button size="sm" className={styles.btnPurchase}>

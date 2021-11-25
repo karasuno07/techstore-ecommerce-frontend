@@ -7,10 +7,22 @@ a {
    text-decoration: none !important;
 }
 
+.mt-10 {
+   margin-top: 100px;
+}
+
 .dropdown-toggle::after {
    display: none !important;
 }
 
-.mt-10 {
-   margin-top: 100px;
+.icon-sm {
+   font-size: 10px;
+}
+
+.icon-md {
+   font-size: 14px;
+}
+
+.icon-lg {
+   font-size: 20px;
 }

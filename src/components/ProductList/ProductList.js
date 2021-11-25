@@ -8,7 +8,7 @@ import styles from "./ProductList.module.scss"
 const ProductList = ({ title, filter, list }) => {
    return (
       <Container fluid className={styles.container}>
-         <ProductFilter title={title} filter={filter} />
+         {title && filter && <ProductFilter title={title} filter={filter} />}
 
          <Row className={styles.row} sm={2} md={4} lg={5}>
             {list.map((product, index) => (

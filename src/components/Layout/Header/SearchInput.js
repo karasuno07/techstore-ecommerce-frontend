@@ -23,7 +23,6 @@ const SearchInput = ({ onToggleOverlays }) => {
    useEffect(() => {
       const timerId = setTimeout(() => {
          // Gọi API
-         console.log(searchValue)
       }, 2000)
 
       return () => clearTimeout(timerId)

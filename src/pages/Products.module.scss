@@ -3,9 +3,10 @@
 .wrapper {
    max-width: $content-width;
    margin: auto;
+   min-height: 1200px;
+   padding: 15px;
 
-   .bannerWrapper {
-      height: 380px;
-      padding: 15px 0;
+   & > div + div {
+      margin-top: 15px;
    }
 }

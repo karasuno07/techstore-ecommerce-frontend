@@ -10,7 +10,7 @@ const categories = [
    {
       id: 1,
       name: "Điện thoại",
-      slug: "dtdd",
+      slug: "mobile",
       brands: [
          { id: 1, name: "Apple", slug: "apple" },
          { id: 2, name: "Samsung", slug: "samsung" },
@@ -180,7 +180,7 @@ const smartphoneList = [
 
 const Homepage = () => {
    return (
-      <React.Fragment>
+      <div className={styles.wrapper}>
          <Section className={styles.bannerWrapper}>
             <CategoryBar items={categories} />
             <PromotionCarousel items={promotions} />
@@ -193,7 +193,7 @@ const Homepage = () => {
                list={smartphoneList}
             />
          </Section>
-      </React.Fragment>
+      </div>
    )
 }
 
