@@ -1,0 +1,129 @@
+@import "../../../library";
+
+.actions {
+   display: flex;
+   justify-content: space-around;
+
+   @include Responsive(XS SM) {
+      flex-direction: column;
+   }
+
+   button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 10px;
+      border-radius: 25px;
+      color: #fff;
+      transition: all 0.35s linear;
+
+      @include Responsive(MD XL) {
+         & + button {
+            margin-left: 10px;
+         }
+      }
+
+      &:hover {
+         color: #fff;
+      }
+
+      &.btnBackward {
+         position: relative;
+         overflow: hidden;
+
+         &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $info;
+            transition: all 0.35s linear;
+            z-index: -1;
+            transform-origin: left;
+         }
+
+         &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background-color: #099;
+            transition: all 0.35s linear;
+            z-index: -2;
+            transform-origin: right;
+         }
+
+         &.btnShopMore {
+            &::before {
+               width: 100%;
+            }
+         }
+
+         &.btnBack {
+            &::after {
+               width: 100%;
+            }
+         }
+      }
+
+      &.btnForward {
+         position: relative;
+         overflow: hidden;
+
+         &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $danger;
+            transition: all 0.35s linear;
+            z-index: -1;
+            transform-origin: left;
+         }
+
+         &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background-color: $success;
+            transition: all 0.35s linear;
+            z-index: -2;
+            transform-origin: right;
+         }
+
+         &.btnCheckout {
+            &::before {
+               width: 100%;
+            }
+         }
+
+         &.btnFinish {
+            &::after {
+               width: 100%;
+            }
+         }
+      }
+
+      svg {
+         display: inline-block;
+         font-size: 20px;
+
+         & + span {
+            margin-left: 5px;
+         }
+      }
+   }
+}

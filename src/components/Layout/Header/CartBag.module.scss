@@ -2,25 +2,30 @@
 
 .cartBox {
    @extend %header-item;
-}
 
-.cartIcon_Block {
-   position: relative;
-}
+   &:hover {
+      color: #fff;
+   }
 
-.cartIcon {
-   font-size: 28px;
-}
+   .cartIcon_Block {
+      position: relative;
 
-.quantity {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, calc(-50% + 4px));
-   font-weight: 600;
-}
+      .cartIcon {
+         font-size: 28px;
+      }
 
-.cartText {
-   margin: 0 0 0 5px;
-   line-height: 16px;
+      .quantity {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, calc(-50% + 4px));
+         font-weight: 600;
+      }
+   }
+
+   .cartText {
+      text-align: left;
+      margin: 0 0 0 5px;
+      line-height: 16px;
+   }
 }

@@ -39,66 +39,6 @@
    }
 
    .form {
-      .formLabelGroup {
-         display: flex;
-         flex-flow: column-reverse;
-
-         + .formLabelGroup {
-            margin-top: 10px;
-         }
-
-         input,
-         label {
-            transition: all 0.25s linear;
-            touch-action: manipulation;
-         }
-
-         input {
-            font-size: 15px;
-            width: 100%;
-            padding: 18px 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-
-            &::-webkit-input-placeholder {
-               opacity: 0;
-               transition: inherit;
-            }
-
-            &:focus {
-               border-left: 8px solid red;
-
-               &::-webkit-input-placeholder {
-                  opacity: 1;
-               }
-            }
-
-            &:placeholder-shown + label {
-               cursor: text;
-               max-width: 66.66%;
-               white-space: nowrap;
-               overflow: hidden;
-               text-overflow: ellipsis;
-               transform-origin: left bottom;
-               transform: translate(0, 2.125rem);
-               margin-left: 10px;
-            }
-
-            &:not(:placeholder-shown) + label,
-            &:focus + label {
-               transform: translate(0, 0);
-               margin-left: 0;
-               font-weight: bold;
-            }
-         }
-
-         & > label {
-            font-size: 14px;
-            color: #666;
-            padding-bottom: 3px;
-         }
-      }
-
       .btnControl {
          font-weight: 700;
          width: 100%;

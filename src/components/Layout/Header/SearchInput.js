@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styles from "./SearchInput.module.scss"
-import Input from "../../UI/Input"
+import Input from "../../UI/Form/Input"
 import { BsSearch } from "react-icons/bs"
 
 const SearchInput = ({ onToggleOverlays }) => {
@@ -34,6 +34,7 @@ const SearchInput = ({ onToggleOverlays }) => {
             <BsSearch className={styles.searchIcon_Icon} />
          </div>
          <Input
+            rounded={true}
             className={styles.searchBox}
             placeholder="Bạn cần tìm gì?"
             onKeyUp={handleTypingSearchBox}

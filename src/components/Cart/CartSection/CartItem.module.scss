@@ -1,0 +1,141 @@
+@import "../../../library";
+
+.wrapper {
+   background: #fff;
+   box-shadow: $box-shadow;
+   padding: 15px 0;
+   margin: 0;
+   border-radius: $border-radius / 2;
+
+   & + .wrapper {
+      margin-top: 10px;
+      border-top: 1px solid #ccc;
+   }
+
+   .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+         width: 60%;
+         @include prefix-property(transition, (all 0.4s ease-in-out), webkit moz o ms);
+
+         &:hover {
+            @include Responsive(MD XL) {
+               @include prefix-property(transform, scale(1.25), webkit moz o ms);
+               cursor: zoom-in;
+            }
+         }
+
+         @include Responsive(XS) {
+            width: 40%;
+         }
+      }
+   }
+
+   .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+
+      @include Responsive(XS SM) {
+         padding: 0 20px;
+      }
+
+      ul {
+         list-style: none;
+         margin: 0;
+         li {
+            font-size: 11px;
+            padding-bottom: 5px;
+         }
+      }
+
+      .name {
+         font-size: 16px;
+         font-weight: bold;
+         padding-bottom: 10px;
+      }
+
+      .totalPrice {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+
+         @include Responsive(XS) {
+            align-items: flex-start;
+         }
+
+         .label {
+            font-size: 14px;
+            font-weight: bold;
+
+            @include Responsive(XS) {
+               margin-top: 10px;
+            }
+         }
+
+         .value {
+            font-size: 12px;
+         }
+      }
+
+      .action {
+         display: flex;
+         align-items: center;
+
+         .inputQuantity {
+            $inputSize: 30px;
+            max-width: 40px;
+            padding: 0.5rem 0;
+            flex-wrap: nowrap;
+
+            .quantity {
+               font-size: 12px;
+               text-align: center;
+               background-color: #f0f0f0;
+               border: 1px solid #dfdfdf;
+               height: $inputSize;
+               &::-webkit-inner-spin-button,
+               &::-webkit-outer-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+               }
+            }
+
+            .btnQuantity {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: $inputSize;
+               min-width: $inputSize;
+               padding: 0;
+               text-align: center;
+               background: rgb(4, 146, 202);
+               border: none;
+               color: #fff;
+
+               &:first-child {
+                  border-top-left-radius: 5px;
+                  border-bottom-left-radius: 5px;
+               }
+
+               &:last-child {
+                  border-top-right-radius: 5px;
+                  border-bottom-right-radius: 5px;
+               }
+            }
+         }
+
+         .btnRemove {
+            margin-left: auto;
+            font-size: 24px;
+            padding: 0;
+            color: $danger;
+         }
+      }
+   }
+}

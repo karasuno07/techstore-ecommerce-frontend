@@ -1,0 +1,17 @@
+@import "../../../library";
+
+.select {
+   width: 100%;
+   padding: {
+      top: 5px;
+      right: 10px;
+      bottom: 5px;
+      left: 6px;
+   }
+   border: 1px solid #cacaca {
+      radius: $border-radius;
+   }
+   &:focus {
+      outline: none;
+   }
+}

@@ -1,7 +1,35 @@
+$XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1200px;
+
+@mixin Responsive($canvases) {
+   @each $canvas in $canvases {
+      @if $canvas == XS {
+         @media only screen and (max-width: #{$XS - 1px} ) {
+            @content;
+         }
+      } @else if $canvas == SM {
+         @media only screen and (min-width: $XS) and (max-width: #{$SM - 1px}) {
+            @content;
+         }
+      } @else if $canvas == MD {
+         @media only screen and (min-width: $SM) and (max-width: #{$MD - 1px}) {
+            @content;
+         }
+      } @else if $canvas == XL {
+         @media only screen and (min-width: $MD) {
+            @content;
+         }
+      }
+   }
+}
+
 $primary: #d70018; // Màu chủ đạo
+$yellow: #e8c238;
 $orange: #e36222;
 $blue: #3590cc;
-$success: #47d764;
+$success: #13be35;
 $info: #2f86eb;
 $warning: #ffc021;
 $danger: #dc3545;
@@ -37,5 +65,42 @@ $content-width: 1200px;
    }
    @keyframes #{$name} {
       @content;
+   }
+}
+
+@mixin card-style(
+   $border-radius: $border-radius,
+   $header-background: $primary,
+   $header-foreground: #fff,
+   $body-background: #dfdfdf50,
+   $body-foreground: #555
+) {
+   overflow: hidden;
+   border: none {
+      radius: $border-radius;
+   }
+
+   .header {
+      background-color: $header-background;
+      color: $header-foreground;
+      border: {
+         bottom: none;
+         top-left-radius: $border-radius;
+         top-right-radius: $border-radius;
+      }
+      font-weight: 700;
+      font-size: 14px;
+   }
+
+   .body {
+      background: $body-background;
+      color: $body-foreground;
+      border: 1px solid #99999950 {
+         top: none;
+         top-left-radius: none;
+         top-right-radius: none;
+         bottom-left-radius: inherit;
+         bottom-right-radius: inherit;
+      }
    }
 }

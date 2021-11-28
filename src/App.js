@@ -6,6 +6,7 @@ const Home = React.lazy(() => import("./pages/Home"))
 const Login = React.lazy(() => import("./pages/Login"))
 const Register = React.lazy(() => import("./pages/Register"))
 const Products = React.lazy(() => import("./pages/Products"))
+const Checkout = React.lazy(() => import("./pages/Checkout"))
 
 function App() {
    return (
@@ -16,6 +17,7 @@ function App() {
                <Route path="/login" element={<Login />} />
                <Route path="/register" element={<Register />} />
                <Route path="/:category" element={<Products />} />
+               <Route path="/cart" element={<Checkout />} />
             </Routes>
          </Suspense>
       </Layout>

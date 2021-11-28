@@ -12,11 +12,18 @@ import "slick-carousel/slick/slick-theme.css"
 
 const PromotionCarousel = ({ items }) => {
    const [activeIndex, setActiveIndex] = useState(0)
+   const [forward, setForward] = useState(true)
    const [showControl, setShowControl] = useState(false)
    const sliderRef = useRef()
 
-   const handlePrevSlide = () => sliderRef.current.slickPrev()
-   const handleNextSlide = () => sliderRef.current.slickNext()
+   const handlePrevSlide = () => {
+      setForward(false)
+      sliderRef.current.slickPrev()
+   }
+   const handleNextSlide = () => {
+      setForward(true)
+      sliderRef.current.slickNext()
+   }
    const toggleShowControl = (state) => setShowControl(!!state)
 
    const settings = {
@@ -32,7 +39,9 @@ const PromotionCarousel = ({ items }) => {
       beforeChange: (current, next) => {
          setActiveIndex(next)
       },
-      appendDots: (dots) => <ControlItems items={dots} activeIndex={activeIndex} />,
+      appendDots: (dots) => (
+         <ControlItems items={dots} activeIndex={activeIndex} forward={forward} />
+      ),
       customPaging: (index) => <span>{items[index].name}</span>,
    }
 

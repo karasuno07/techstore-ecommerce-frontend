@@ -22,8 +22,10 @@
 
 .searchBox {
    width: 250px;
-   border-top-left-radius: 0 !important;
-   border-bottom-left-radius: 0 !important;
+   border: none !important  {
+      top-left-radius: 0 !important;
+      bottom-left-radius: 0 !important;
+   }
    color: #2f2f2f;
    font-size: 14px;
    line-height: 22px;

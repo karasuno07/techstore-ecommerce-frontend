@@ -1,20 +1,26 @@
 import React from "react"
-import styles from "./CartBag.module.scss"
+import { useSelector } from "react-redux"
+
+import Button from "components/UI/Button"
 import { BsBag } from "react-icons/bs"
 
-const CartBag = (props) => {
+import styles from "./CartBag.module.scss"
+
+const CartBag = () => {
+   const cartItemQuantity = useSelector((state) => state.cart.totalQuantity)
+
    return (
-      <div className={styles.cartBox}>
+      <Button href="/cart" className={styles.cartBox}>
          <div className={styles.cartIcon_Block}>
             <BsBag className={styles.cartIcon} />
-            <span className={styles.quantity}>0</span>
+            <span className={styles.quantity}>{cartItemQuantity}</span>
          </div>
          <p className={styles.cartText}>
             Giỏ
             <br />
             Hàng
          </p>
-      </div>
+      </Button>
    )
 }
 

@@ -2,7 +2,8 @@ import React from "react"
 
 import { Card } from "react-bootstrap"
 import Button from "components/UI/Button"
-import Input from "components/UI/Input"
+import Input from "components/UI/Form/Input"
+import FloatingInput from "components/UI/Form/FloatingInput"
 import { FaFacebook, FaGoogle } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
@@ -16,11 +17,12 @@ const Register = () => {
             <p className={styles.title}>Đăng ký</p>
 
             <form className={styles.form}>
-               <div className={styles.formLabelGroup}>
-                  <Input id="phone-number" type="text" placeholder="Nhập số điện thoại" />
-                  <label htmlFor="phone-number">Số điện thoại</label>
-               </div>
-
+               <FloatingInput
+                  id="phone-number"
+                  title="Tên đăng nhập"
+                  type="text"
+                  placeholder="Nhập số điện thoại"
+               />
                <Button variant="danger" size="sm" className={clsx(styles.btnControl, "mt-4")}>
                   Tiếp theo
                </Button>

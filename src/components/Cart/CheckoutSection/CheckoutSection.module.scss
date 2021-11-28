@@ -1,0 +1,40 @@
+@import "../../../library";
+
+.section {
+   @include card-style;
+   background-color: rgba(187, 194, 235, 0.8);
+
+   .body {
+      padding: 30px;
+
+      .title {
+         font-size: 20px;
+         font-weight: 550;
+         margin-bottom: 20px;
+         text-transform: uppercase;
+      }
+
+      .form {
+         font-size: 14px;
+
+         label {
+            font-weight: 700;
+         }
+
+         input {
+            width: 100%;
+         }
+
+         .formInputGroup {
+            span {
+               background-color: cornflowerblue;
+               color: #fff;
+            }
+         }
+
+         .paymentMethod {
+            margin-top: 15px;
+         }
+      }
+   }
+}

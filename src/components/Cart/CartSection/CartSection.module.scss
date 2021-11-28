@@ -1,0 +1,22 @@
+@import "../../../library";
+
+.section {
+   height: 430px;
+   @include card-style;
+
+   .body {
+      background-color: #dddddd50;
+      color: #555;
+      overflow-y: scroll;
+      padding: 12px;
+
+      &::-webkit-scrollbar {
+         width: 5px;
+         background-color: $yellow;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: $orange;
+      }
+   }
+}

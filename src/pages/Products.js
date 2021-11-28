@@ -124,56 +124,172 @@ const smartphoneList = [
    {
       id: 1,
       name: "Samsung Galaxy Note 10",
-      price: 24590000,
-      discount: 2990000,
+      slug: "samsung-galaxy-note-10",
+      brand: {
+         id: 2,
+         name: "Samsung",
+         slug: "samsung",
+         image: "https://cellphones.com.vn/media/icons/brands/brand-211.svg",
+      },
+      category: {
+         id: 1,
+         name: "Mobile",
+         slug: "mobile",
+         parent: null,
+      },
+      details: [
+         {
+            id: 1,
+            inStock: 30,
+            price: 24590000,
+            discount: 2990000,
+            description: {},
+            isDefault: true,
+            images: [
+               "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+            ],
+         },
+      ],
       rating: {
          number: 5,
          count: 87,
       },
-      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
    },
    {
       id: 2,
       name: "Iphone 13 Pro Max",
-      price: 34900000,
-      discount: 1000000,
+      slug: "iphone-13-pro-max",
+      brand: {
+         id: 1,
+         name: "Apple",
+         slug: "apple",
+         image: "https://cellphones.com.vn/media/icons/brands/brand-286.svg",
+      },
+      category: {
+         id: 1,
+         name: "Mobile",
+         slug: "mobile",
+         parent: null,
+      },
+      details: [
+         {
+            id: 1,
+            inStock: 25,
+            price: 34900000,
+            discount: 1000000,
+            description: {},
+            isDefault: true,
+            images: [
+               "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+            ],
+         },
+      ],
       rating: {
          number: 3.3,
          count: 12,
       },
-      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
    },
    {
       id: 3,
       name: "Iphone 13 Pro Max",
-      price: 34900000,
-      discount: 1000000,
+      slug: "iphone-13-pro-max",
+      brand: {
+         id: 1,
+         name: "Apple",
+         slug: "apple",
+         image: "https://cellphones.com.vn/media/icons/brands/brand-286.svg",
+      },
+      category: {
+         id: 1,
+         name: "Mobile",
+         slug: "mobile",
+         parent: null,
+      },
+      details: [
+         {
+            id: 1,
+            inStock: 25,
+            price: 34900000,
+            discount: 1000000,
+            description: {},
+            isDefault: true,
+            images: [
+               "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+            ],
+         },
+      ],
       rating: {
          number: 5,
          count: 1,
       },
-      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
    },
    {
       id: 4,
       name: "Iphone 13 Pro Max",
-      price: 34900000,
-      discount: 1000000,
+      slug: "iphone-13-pro-max",
+      brand: {
+         id: 1,
+         name: "Apple",
+         slug: "apple",
+         image: "https://cellphones.com.vn/media/icons/brands/brand-286.svg",
+      },
+      category: {
+         id: 1,
+         name: "Mobile",
+         slug: "mobile",
+         parent: null,
+      },
+      details: [
+         {
+            id: 1,
+            inStock: 25,
+            price: 34900000,
+            discount: 1000000,
+            description: {},
+            isDefault: true,
+            images: [
+               "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+            ],
+         },
+      ],
       rating: {
          number: 3.3,
          count: 79,
       },
-      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
    },
    {
       id: 5,
       name: "Iphone 13 Pro Max",
-      price: 34900000,
+      slug: "iphone-13-pro-max",
+      brand: {
+         id: 1,
+         name: "Apple",
+         slug: "apple",
+         image: "https://cellphones.com.vn/media/icons/brands/brand-286.svg",
+      },
+      category: {
+         id: 1,
+         name: "Mobile",
+         slug: "mobile",
+         parent: null,
+      },
+      details: [
+         {
+            id: 1,
+            inStock: 25,
+            price: 34900000,
+            discount: 1000000,
+            description: {},
+            isDefault: true,
+            images: [
+               "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+            ],
+         },
+      ],
       rating: {
          number: 5,
          count: 87,
       },
-      image: "https://cdn.cellphones.com.vn/media/catalog/product/cache/8/image/1000x/040ec09b1e35df139433887a97daa66f/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
    },
 ]
 

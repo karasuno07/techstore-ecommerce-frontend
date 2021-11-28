@@ -1,0 +1,45 @@
+@import "../../../library";
+
+.wrapper {
+   & + .wrapper {
+      margin-top: 1rem;
+   }
+
+   .inputGroup {
+      display: flex;
+      align-items: center;
+      height: 32px;
+
+      & + .inputGroup {
+         margin-top: 1rem;
+      }
+
+      &.rounded {
+         border-radius: $border-radius;
+      }
+
+      span {
+         display: flex;
+         height: 100%;
+         padding: 0 10px;
+         align-items: center;
+         justify-content: center;
+         border: 1px solid #cacaca {
+            right: none;
+            top-left-radius: inherit;
+            bottom-left-radius: inherit;
+            top-right-radius: 0 !important;
+            bottom-right-radius: 0 !important;
+         }
+         overflow: hidden;
+         font-size: 12px;
+      }
+
+      input {
+         border: {
+            top-left-radius: 0 !important;
+            bottom-left-radius: 0 !important;
+         }
+      }
+   }
+}
