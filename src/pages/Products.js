@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { useLocation } from "react-router"
+import { shallowEqual, useSelector, useDispatch } from "react-redux"
+import { useMatch } from "react-router"
 
-import BrandFilterBar from "components/Filter/BrandFilterBar"
 import Breadcrumbs from "components/UI/Breadcrumbs"
+import Container from "components/UI/Container"
+import BrandFilterBar from "components/Filter/BrandFilterBar"
 import SortFilter from "components/Filter/SortFilter"
 import CriteriaFilter from "components/Filter/CriteriaFilter"
 import FilterList from "components/Filter/FilterList"
@@ -294,11 +295,16 @@ const smartphoneList = [
 ]
 
 const Products = () => {
-   const location = useLocation()
+   const categoryMatch = useMatch(":category")
+   const brandMatch = useMatch(":category/:brand")
    const [category, setCategory] = useState({})
    const dispatch = useDispatch()
-   const { filters, isFiltering } = useSelector((state) => state.productFilter.filter)
+   const { filters, isFiltering } = useSelector((state) => state.productFilter.filter, shallowEqual)
    const sort = useSelector((state) => state.productFilter.sort)
+
+   const categorySlugOnly = categoryMatch && categoryMatch.params.category
+   const categorySlug = brandMatch && brandMatch.params.category
+   const brandSlug = brandMatch && brandMatch.params.brand
    const activeFilters = filters && filters.filter((filter) => filter.active)
 
    const toggleCriteriaFilter = (filterIndex, criteriaIndex) => {
@@ -319,12 +325,17 @@ const Products = () => {
    }
 
    useEffect(() => {
-      const key = location.pathname.replace("/", "")
       // Gọi API
-      const existingCategory = categories.find((category) => category.slug === key)
-      setCategory(existingCategory)
-      dispatch(filterAction.loadFilter(Filters[key]))
-   }, [location, dispatch])
+      if (categorySlugOnly) {
+         const existingCategory = categories.find((category) => category.slug === categorySlugOnly)
+         setCategory(existingCategory)
+         dispatch(filterAction.loadFilter(Filters[categorySlugOnly]))
+      } else {
+         const existingCategory = categories.find((category) => category.slug === categorySlug)
+         setCategory(existingCategory)
+         dispatch(filterAction.loadFilter(Filters[categorySlugOnly]))
+      }
+   }, [dispatch, categorySlugOnly, categorySlug, brandSlug])
 
    if (
       category === undefined ||
@@ -335,7 +346,7 @@ const Products = () => {
       return (
          <React.Fragment>
             <Breadcrumbs links={[{ page: category.name, href: category.slug }]} />
-            <div className={styles.wrapper}>
+            <Container size="XL" className={styles.container}>
                <BrandFilterBar items={brands} />
                {activeFilters && activeFilters.length > 0 && (
                   <FilterList filters={activeFilters} handleRemoveFilter={removeCriteriaFilter} />
@@ -349,7 +360,7 @@ const Products = () => {
                )}
                <SortFilter sort={sort} handleActiveFilter={toggleSortFilter} />
                <ProductList list={smartphoneList} />
-            </div>
+            </Container>
          </React.Fragment>
       )
    }

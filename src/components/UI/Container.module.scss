@@ -1,0 +1,26 @@
+@import "../../library";
+
+.container {
+   max-width: 100%;
+   margin: auto;
+
+   & > div + div {
+      margin-top: 15px;
+   }
+
+   &.XL {
+      max-width: $XL;
+   }
+
+   &.XS {
+      max-width: $XS;
+   }
+
+   &.SM {
+      max-width: $SM;
+   }
+
+   &.XL {
+      max-width: $XL;
+   }
+}

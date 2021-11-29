@@ -17,7 +17,6 @@ const Input = React.forwardRef(
                type={type}
                id={id}
                className={clsx(styles.input, className, {
-                  [styles[type]]: type,
                   [styles.rounded]: rounded,
                })}
                {...others}

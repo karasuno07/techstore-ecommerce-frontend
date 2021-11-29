@@ -1,11 +1,6 @@
 @import "../library";
 
-.wrapper {
-   max-width: $content-width;
-   margin: auto;
-
-   .bannerWrapper {
-      height: 380px;
-      padding: 15px 0;
-   }
+.bannerWrapper {
+   height: 380px;
+   padding: 15px 0;
 }

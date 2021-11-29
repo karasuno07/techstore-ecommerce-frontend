@@ -14,8 +14,7 @@ const CheckoutSection = () => {
    const {
       register,
       handleSubmit,
-      watch,
-      formState: { error },
+      formState: { errors },
    } = useForm()
 
    return (
@@ -28,17 +27,33 @@ const CheckoutSection = () => {
                   <Col>
                      <Input
                         rounded={true}
-                        name="firstName"
+                        id="firstName"
                         placeholder="Nhập họ người nhận"
                         type="text"
+                        {...register("firstName", {
+                           required: "Không được bỏ trống họ/tên người nhận",
+                           minLength: {
+                              value: 2,
+                              message: "Họ phải chứa tối thiểu 2 ký tự",
+                           },
+                        })}
+                        error={errors.firstName}
                      />
                   </Col>
                   <Col>
                      <Input
                         rounded={true}
-                        name="lastName"
+                        id="lastName"
                         placeholder="Nhập tên người nhận"
                         type="text"
+                        {...register("lastName", {
+                           required: "Không được bỏ trống họ/tên người nhận",
+                           minLength: {
+                              value: 2,
+                              message: "Tên phải chứa tối thiểu 2 ký tự",
+                           },
+                        })}
+                        error={errors.lastName}
                      />
                   </Col>
                </Row>
@@ -51,6 +66,14 @@ const CheckoutSection = () => {
                   appendChild={<FaAt />}
                   type="email"
                   placeholder="Nhập địa chỉ email"
+                  {...register("email", {
+                     required: "Không được bỏ trống email",
+                     pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Sai định dạng email",
+                     },
+                  })}
+                  error={errors.email}
                />
                <InputGroup
                   title="Địa chỉ nhận hàng"
@@ -60,15 +83,23 @@ const CheckoutSection = () => {
                   appendChild={<FaMapMarkedAlt />}
                   type="text"
                   placeholder="Nhập địa chỉ nhận hàng"
+                  {...register("address", {
+                     required: "Không được bỏ trống địa chỉ nhận hàng",
+                  })}
+                  error={errors.address}
                />
                <InputGroup
                   title="SĐT nhận hàng"
-                  id="phone-number"
+                  id="phoneNumber"
                   className={styles.formInputGroup}
                   rounded={true}
                   appendChild={<FaPhoneAlt />}
                   type="tel"
                   placeholder="Nhập SĐT người nhận"
+                  {...register("phoneNumber", {
+                     required: "Không được bỏ trống SĐT",
+                  })}
+                  error={errors.phoneNumber}
                />
                <div className={styles.paymentMethod}>
                   <Select

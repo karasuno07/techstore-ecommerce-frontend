@@ -56,4 +56,24 @@
       color: #666;
       padding-bottom: 3px;
    }
+
+   &.error {
+      .errorMessage {
+         margin-top: 3px;
+         display: flex;
+         align-items: center;
+         font-size: 14px;
+         line-height: 20px;
+         color: red;
+
+         svg {
+            display: inline-block;
+            font-size: 20px;
+
+            + span {
+               margin-left: 3px;
+            }
+         }
+      }
+   }
 }

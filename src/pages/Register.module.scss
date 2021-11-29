@@ -1,96 +1,101 @@
 @import "../library";
 .wrapper {
-   max-width: $content-width;
-}
+   width: 100%;
+   margin: auto;
+   position: relative;
+   top: 0;
+   left: 0;
+   min-height: calc(100vh - $header-height);
 
-.card {
-   @include absolute-center;
-   background-color: #fafafa;
-   padding: 35px;
-   max-width: 450px;
-   min-width: 400px;
-   box-shadow: $box-shadow;
+   .card {
+      @include absolute-center;
+      background-color: #fafafa;
+      padding: 35px;
+      width: 400px;
+      margin: auto;
+      box-shadow: $box-shadow;
 
-   .title {
-      font-size: 20px;
-      font-weight: 550;
-      line-height: 24px;
-      text-transform: capitalize;
-   }
-
-   .divider {
-      display: flex;
-
-      span {
-         color: #cccccc;
-         padding: 0px 12px;
-         font-size: 12px;
-         text-transform: uppercase;
+      .title {
+         font-size: 20px;
+         font-weight: 550;
+         line-height: 24px;
+         text-transform: capitalize;
       }
 
-      &::before,
-      &::after {
-         content: "";
-         height: 1px;
-         width: 100%;
-         background-color: #dbdbdb;
-         margin-top: 9px;
-      }
-   }
-
-   .form {
-      .btnControl {
-         font-weight: 700;
-         width: 100%;
-         height: 40px;
-         margin-top: 40px;
-      }
-   }
-
-   .btnBlock {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 10px;
-
-      .btnOAuth {
+      .divider {
          display: flex;
-         justify-content: center;
-         align-items: center;
-         width: 100%;
-         color: #fff;
 
          span {
-            font-size: 18px;
-            margin-left: 5px;
+            color: #cccccc;
+            padding: 0px 12px;
+            font-size: 12px;
+            text-transform: uppercase;
          }
 
-         &:hover {
-            filter: saturate(1.5) opacity(0.9) contrast(1.05);
-         }
-
-         svg {
-            display: inline-block;
-            font-size: 22px;
-            line-height: 22px;
+         &::before,
+         &::after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: #dbdbdb;
+            margin-top: 9px;
          }
       }
 
-      .btnFacebook {
-         background-color: #465993;
+      .form {
+         .btnControl {
+            font-weight: 700;
+            width: 100%;
+            height: 40px;
+            margin-top: 40px;
+         }
       }
 
-      .btnGoogle {
-         background-color: $danger;
-      }
-   }
+      .btnBlock {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         gap: 10px;
 
-   .textRegister {
-      font-size: 12px;
-      line-height: 14.4px;
-      margin: 0px 5px 0px 0px;
-      padding: 0px 25px;
-      text-align: center;
-      color: rgb(168, 168, 168);
+         .btnOAuth {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            color: #fff;
+
+            span {
+               font-size: 18px;
+               margin-left: 5px;
+            }
+
+            &:hover {
+               filter: saturate(1.5) opacity(0.9) contrast(1.05);
+            }
+
+            svg {
+               display: inline-block;
+               font-size: 22px;
+               line-height: 22px;
+            }
+         }
+
+         .btnFacebook {
+            background-color: #465993;
+         }
+
+         .btnGoogle {
+            background-color: $danger;
+         }
+      }
+
+      .textRegister {
+         font-size: 12px;
+         line-height: 14.4px;
+         margin: 0px 5px 0px 0px;
+         padding: 0px 25px;
+         text-align: center;
+         color: rgb(168, 168, 168);
+      }
    }
 }

@@ -5,6 +5,7 @@ import Section from "components/UI/Section"
 import styles from "./Home.module.scss"
 import PromotionBanners from "components/PromotionBanners/PromotionBanners"
 import ProductList from "components/ProductList/ProductList"
+import Container from "components/UI/Container"
 
 const categories = [
    {
@@ -296,7 +297,7 @@ const smartphoneList = [
 
 const Homepage = () => {
    return (
-      <div className={styles.wrapper}>
+      <Container size="XL">
          <Section className={styles.bannerWrapper}>
             <CategoryBar items={categories} />
             <PromotionCarousel items={promotions} />
@@ -309,7 +310,7 @@ const Homepage = () => {
                list={smartphoneList}
             />
          </Section>
-      </div>
+      </Container>
    )
 }
 

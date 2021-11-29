@@ -6,6 +6,7 @@ const Home = React.lazy(() => import("./pages/Home"))
 const Login = React.lazy(() => import("./pages/Login"))
 const Register = React.lazy(() => import("./pages/Register"))
 const Products = React.lazy(() => import("./pages/Products"))
+const SingleProduct = React.lazy(() => import("./pages/SingleProduct"))
 const Checkout = React.lazy(() => import("./pages/Checkout"))
 
 function App() {
@@ -13,10 +14,14 @@ function App() {
       <Layout>
          <Suspense fallback={<div className="centered"></div>}>
             <Routes>
-               <Route path="/" exact element={<Home />} />
-               <Route path="/login" element={<Login />} />
-               <Route path="/register" element={<Register />} />
-               <Route path="/:category" element={<Products />} />
+               <Route path="/" index element={<Home />} />
+               <Route path="login" element={<Login />} />
+               <Route path="register" element={<Register />} />
+               <Route path=":category" element={<Products />}>
+                  <Route path=":brand" element={<Products />}>
+                     <Route path=":product" element={<SingleProduct />} />
+                  </Route>
+               </Route>
                <Route path="/cart" element={<Checkout />} />
             </Routes>
          </Suspense>
