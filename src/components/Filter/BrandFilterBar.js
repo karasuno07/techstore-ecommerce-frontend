@@ -1,7 +1,5 @@
 import React from "react"
-
 import Button from "components/UI/Button"
-
 import styles from "./BrandFilterBar.module.scss"
 
 const BrandFilterBar = ({ items }) => {

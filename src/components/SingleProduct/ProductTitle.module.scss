@@ -1,0 +1,43 @@
+@import "../../library";
+
+.wrapper {
+   width: 100%;
+   padding: 10px 15px;
+   border-bottom: 1px solid #ccc;
+
+   .box {
+      max-width: $XL;
+      display: flex;
+      align-items: center;
+      margin: auto;
+      gap: 8px;
+
+      .title {
+         font-size: 18px;
+         font-weight: 700;
+         line-height: 28.8px;
+      }
+
+      .ratingStar {
+         display: flex;
+         align-items: center;
+         font-size: 12px;
+
+         svg {
+            color: #ddd;
+            &.check {
+               color: #f59e0b;
+            }
+
+            & + svg {
+               margin-left: 3px;
+            }
+         }
+      }
+
+      .ratingCount {
+         font-size: 14px;
+         line-height: 22px;
+      }
+   }
+}

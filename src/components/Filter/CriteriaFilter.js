@@ -1,11 +1,9 @@
 import React from "react"
-
 import Button from "components/UI/Button"
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { FaFilter, FaChevronDown } from "react-icons/fa"
-
 import clsx from "clsx"
-import styles from "./GeneralFilter.module.scss"
+import styles from "./Filter.module.scss"
 
 const CriteriaFilter = ({ filters, isFiltering, handleActiveFilter }) => {
    return (

@@ -13,7 +13,6 @@ import { FaAt, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa"
 const CheckoutSection = () => {
    const {
       register,
-      handleSubmit,
       formState: { errors },
    } = useForm()
 

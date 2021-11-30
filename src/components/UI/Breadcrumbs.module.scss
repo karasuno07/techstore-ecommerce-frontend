@@ -9,7 +9,7 @@
    background: #fff;
 
    .box {
-      max-width: $content-width;
+      max-width: $XL;
       height: 32px;
       display: flex;
       align-items: center;
@@ -41,7 +41,7 @@
 
             &::before {
                display: inline-block;
-               margin-right: 5px;
+               margin-right: 10px;
                font-style: normal;
                font-variant: normal;
                text-rendering: auto;

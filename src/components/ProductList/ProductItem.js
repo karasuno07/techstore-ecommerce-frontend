@@ -49,7 +49,10 @@ const ProductItem = ({ item, onAddItem }) => {
             <span>{item.rating.count ? item.rating.count : 0} đánh giá</span>
          </div>
          <div className={styles.btnBlock}>
-            <Button href={`/xyz`} size="sm" className={styles.btnDetail}>
+            <Button
+               href={`/${item.category.slug}/${item.brand.slug}/${item.slug}`}
+               size="sm"
+               className={styles.btnDetail}>
                Xem chi tiết
             </Button>
             <Button

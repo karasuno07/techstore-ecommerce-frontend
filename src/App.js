@@ -18,10 +18,9 @@ function App() {
                <Route path="login" element={<Login />} />
                <Route path="register" element={<Register />} />
                <Route path=":category" element={<Products />}>
-                  <Route path=":brand" element={<Products />}>
-                     <Route path=":product" element={<SingleProduct />} />
-                  </Route>
+                  <Route path=":brand" element={<Products />}></Route>
                </Route>
+               <Route path=":category/:brand/:product" element={<SingleProduct />} />
                <Route path="/cart" element={<Checkout />} />
             </Routes>
          </Suspense>

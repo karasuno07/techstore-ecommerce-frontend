@@ -1,0 +1,30 @@
+.slickDots {
+   display: flex;
+   justify-content: center;
+   position: relative;
+   margin-top: 1px;
+   gap: 5px;
+   height: 48px;
+   overflow: hidden;
+}
+
+@import "../../../library";
+
+.slickItem {
+   display: inline-block;
+   height: 48px;
+   width: 48px;
+   border: 1px solid #ccc;
+   border-radius: $border-radius;
+   cursor: pointer;
+   overflow: hidden;
+
+   &:hover {
+      background-color: #f1f1f1;
+   }
+
+   &.active {
+      font-weight: 700;
+      border: 1px solid rgb(201, 55, 55);
+   }
+}

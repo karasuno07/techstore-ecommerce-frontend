@@ -13,11 +13,22 @@ const Breadcrumbs = ({ links }) => {
                <Link to="/">Trang Chủ</Link>
             </li>
             {links
-               .map((item, index) => (
-                  <li key={index} className={styles.breadcrumb}>
-                     <Link to={"/" + item.href}>{item.page}</Link>
-                  </li>
-               ))
+               .map((item, index, initialItems) => {
+                  const prevItems = initialItems.slice(0, index)
+
+                  const link =
+                     prevItems.length > 0
+                        ? prevItems.reduce((output, prevItem) => output + "/" + prevItem.href, "") +
+                          "/" +
+                          item.href
+                        : "/" + item.href
+
+                  return (
+                     <li key={index} className={styles.breadcrumb}>
+                        <Link to={link}>{item.page}</Link>
+                     </li>
+                  )
+               })
                .reduce((output, item) => {
                   return [...output, item]
                }, [])}

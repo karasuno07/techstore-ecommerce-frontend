@@ -79,4 +79,4 @@ const productFilterSlice = createSlice({
 
 export const filterAction = productFilterSlice.actions
 
-export default productFilterSlice
+export default productFilterSlice.reducer

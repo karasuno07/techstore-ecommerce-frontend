@@ -4,7 +4,7 @@ import Button from "components/UI/Button"
 import { FaTimes, FaTimesCircle } from "react-icons/fa"
 
 import clsx from "clsx"
-import styles from "./GeneralFilter.module.scss"
+import styles from "./Filter.module.scss"
 
 const FilterList = ({ filters, handleRemoveFilter }) => {
    return (

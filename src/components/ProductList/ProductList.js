@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import ProductFilter from "./ProductFilter"
 import ProductItem from "./ProductItem"
 
-import { cartAction } from "app/ecommerce-pages/cartSlice"
+import { cartAction } from "app/ecommerce-pages/cartReducer"
 
 import styles from "./ProductList.module.scss"
 

@@ -1,21 +1,22 @@
 import React, { useState, useRef } from "react"
-import Slider from "react-slick"
+
 import { Card } from "react-bootstrap"
+import Slider from "react-slick"
 
-import Slide from "./Slide"
-import ControlButton from "../ControlButton"
-import ControlItems from "./ControlItems"
-
-import styles from "./PromotionCarousel.module.scss"
+import styles from "./ProductCarousel.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Slide from "./Slide"
+import ControlItems from "./ControlItems"
+import ControlButton from "../ControlButton"
 
-const PromotionCarousel = ({ items }) => {
+const ProductCarousel = ({ data }) => {
    const sliderRef = useRef()
    const [activeIndex, setActiveIndex] = useState(0)
    const [showControl, setShowControl] = useState(false)
    const [forward, setForward] = useState(true)
 
+   const toggleShowControl = (state) => setShowControl(!!state)
    const handlePrevSlide = () => {
       setForward(false)
       sliderRef.current.slickPrev()
@@ -24,7 +25,8 @@ const PromotionCarousel = ({ items }) => {
       setForward(true)
       sliderRef.current.slickNext()
    }
-   const toggleShowControl = (state) => setShowControl(!!state)
+
+   console.log(data.images)
 
    const settings = {
       dots: true,
@@ -33,16 +35,19 @@ const PromotionCarousel = ({ items }) => {
       slideToShow: 1,
       slideToScroll: 1,
       swipeToSlide: true,
-      autoplay: true,
+      autoplay: false,
       speed: 500,
-      autoplaySpeed: 5000,
-      beforeChange: (current, next) => {
+      beforeChange(cur, next) {
          setActiveIndex(next)
       },
       appendDots: (dots) => (
          <ControlItems items={dots} activeIndex={activeIndex} forward={forward} />
       ),
-      customPaging: (index) => <span>{items[index].name}</span>,
+      customPaging: (index) => (
+         <span className={styles.imageItem}>
+            <img src={data.images[index]} alt="" />
+         </span>
+      ),
    }
 
    return (
@@ -50,11 +55,11 @@ const PromotionCarousel = ({ items }) => {
          className={styles.wrapper}
          onMouseEnter={toggleShowControl.bind(null, true)}
          onMouseLeave={toggleShowControl.bind(null, false)}>
-         {items && (
+         {data && (
             <React.Fragment>
                <Slider ref={sliderRef} {...settings}>
-                  {items.map((item, index) => (
-                     <Slide key={index} imageSrc={item.image} />
+                  {data.images.map((image, index) => (
+                     <Slide key={index} imageSrc={image} />
                   ))}
                </Slider>
                <ControlButton
@@ -68,4 +73,4 @@ const PromotionCarousel = ({ items }) => {
    )
 }
 
-export default PromotionCarousel
+export default ProductCarousel

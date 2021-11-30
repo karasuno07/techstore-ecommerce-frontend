@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { cartAction } from "app/ecommerce-pages/cartSlice"
+import { cartAction } from "app/ecommerce-pages/cartReducer"
 
 import { Card } from "react-bootstrap"
 import CartItem from "./CartItem"

@@ -11,9 +11,10 @@ import {
 } from "react-icons/fa"
 
 import clsx from "clsx"
-import styles from "./GeneralFilter.module.scss"
+import styles from "./Filter.module.scss"
 
 const SortFilter = ({ sort, handleActiveFilter }) => {
+   console.log(sort)
    return (
       <div className={styles.wrapper}>
          <p className={styles.title}>Sắp xếp theo</p>

@@ -11,7 +11,7 @@ import FilterList from "components/Filter/FilterList"
 import ProductList from "components/ProductList/ProductList"
 
 import Filters from "common/constants/CriteriaFilter"
-import { filterAction } from "app/ecommerce-pages/productFilterSlice"
+import { filterAction } from "app/ecommerce-pages/productFilterReducer"
 
 import styles from "./Products.module.scss"
 
@@ -296,11 +296,12 @@ const smartphoneList = [
 
 const Products = () => {
    const categoryMatch = useMatch(":category")
-   const brandMatch = useMatch(":category/:brand")
    const [category, setCategory] = useState({})
+   const brandMatch = useMatch(":category/:brand")
+   const [brand, setBrand] = useState({})
    const dispatch = useDispatch()
    const { filters, isFiltering } = useSelector((state) => state.productFilter.filter, shallowEqual)
-   const sort = useSelector((state) => state.productFilter.sort)
+   const sort = useSelector((state) => state.productFilter.sort, shallowEqual)
 
    const categorySlugOnly = categoryMatch && categoryMatch.params.category
    const categorySlug = brandMatch && brandMatch.params.category
@@ -334,6 +335,8 @@ const Products = () => {
          const existingCategory = categories.find((category) => category.slug === categorySlug)
          setCategory(existingCategory)
          dispatch(filterAction.loadFilter(Filters[categorySlugOnly]))
+
+         setBrand({ name: "Apple", slug: "apple" })
       }
    }, [dispatch, categorySlugOnly, categorySlug, brandSlug])
 
@@ -345,9 +348,14 @@ const Products = () => {
    } else {
       return (
          <React.Fragment>
-            <Breadcrumbs links={[{ page: category.name, href: category.slug }]} />
+            <Breadcrumbs
+               links={[
+                  { page: category.name, href: category.slug },
+                  { page: brand.name, href: brand.slug },
+               ]}
+            />
             <Container size="XL" className={styles.container}>
-               <BrandFilterBar items={brands} />
+               {categorySlugOnly && <BrandFilterBar items={brands} />}
                {activeFilters && activeFilters.length > 0 && (
                   <FilterList filters={activeFilters} handleRemoveFilter={removeCriteriaFilter} />
                )}
