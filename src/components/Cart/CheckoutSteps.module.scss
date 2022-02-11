@@ -3,12 +3,11 @@
 $gray: #555555;
 
 .steps {
-   $container-width: 800px;
    $gray: #555555;
    margin: auto {
       bottom: 30px;
    }
-   max-width: $container-width;
+   max-width: 800px;
    font-size: 13px;
 
    ul {
@@ -24,7 +23,7 @@ $gray: #555555;
          flex-direction: column;
          align-items: center;
          text-align: center;
-         width: $container-width / 3;
+         width: calc(800px / 3);
          cursor: pointer;
          transition: all 0.5s linear;
          overflow: hidden;

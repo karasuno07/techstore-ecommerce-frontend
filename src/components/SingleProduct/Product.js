@@ -2,7 +2,7 @@ import ProductCarousel from "components/Carousel/ProductCarousel/ProductCarousel
 import React, { useState } from "react"
 
 import styles from "./Product.module.scss"
-import ProductDetails from "./ProductDetails"
+import ProductDetails from "./ProductDetails/ProductDetails"
 
 const Product = ({ product }) => {
    const [detailIndex, setDetailIndex] = useState(0)

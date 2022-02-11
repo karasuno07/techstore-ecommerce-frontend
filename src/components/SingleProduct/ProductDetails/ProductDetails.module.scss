@@ -1,0 +1,21 @@
+@import "../../../library";
+
+.wrapper {
+   display: flex;
+   width: 33%;
+
+   .priceBox {
+      line-height: 22px;
+      .discountedPrice {
+         color: $primary;
+         font-size: 18px;
+         font-weight: 700;
+      }
+      .originalPrice {
+         margin-left: 8px;
+         color: #707070;
+         font-size: 14px;
+         text-decoration: line-through;
+      }
+   }
+}
